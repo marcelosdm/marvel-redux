@@ -1,10 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./components/App/";
-import store from "./store";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App/';
+import store from './store';
+import { HERO_FAVORITE } from './constants/actionsTypes';
+import { getHeroes } from './selectors/hero';
 
 ReactDOM.render(
-  <App heroes={store.getState().heroState} onFavorite={() => {}} />,
-  document.getElementById("root")
+  <App
+    heroes={getHeroes(store.getState())}
+    onFavorite={id => store.dispatch({ type: HERO_FAVORITE, id })}
+  />,
+  document.getElementById('root')
 );
