@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+import { connect } from 'react-redux';
+import { doFavoriteHero } from '../../actions/favorite';
 
 const Hero = ({ hero, onFavorite }) => (
   <li>
@@ -9,4 +11,8 @@ const Hero = ({ hero, onFavorite }) => (
   </li>
 );
 
-export default Hero;
+const mapDispatchToProps = dispatch => ({
+  onFavorite: id => dispatch(doFavoriteHero(id))
+});
+
+export default connect(null, mapDispatchToProps)(Hero);

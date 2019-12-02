@@ -1,10 +1,10 @@
-import React from "react";
-import Heroes from "../Heroes";
+import React from 'react';
+import Heroes from '../Heroes';
 
-const App = ({ heroes, onFavorite }) => (
+const App = () => (
   <div>
     <h1>Marvel Superheroes</h1>
-    <Heroes heroes={heroes} onFavorite={onFavorite} />
+    <Heroes />
   </div>
 );
 
