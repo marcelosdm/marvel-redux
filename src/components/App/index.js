@@ -6,10 +6,11 @@ import SearchHeroes from '../SearchHeroes';
 import Navbar from '../Navbar';
 import Favorites from '../Favorites';
 import NotFavorites from '../NotFavorites';
+import GlobalStyles from '../../styles/global-styles';
 
 const App = () => (
   <Router>
-    <h1>Marvel Superheroes</h1>
+    <GlobalStyles />
     <Navbar />
     <SearchHeroes />
     <Switch>
