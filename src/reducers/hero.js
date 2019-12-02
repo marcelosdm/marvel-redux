@@ -1,20 +1,14 @@
-const INITIAL_STATE = [
-  {
-    id: 1,
-    name: "Spider-man",
-    description: "Spider-man, does whatever a spider can",
-    favorite: false
-  },
-  {
-    id: 2,
-    name: "Ant-man",
-    description: "He is the ant man",
-    favorite: false
-  }
-];
+import { HEROES_ADD } from '../constants/actionsTypes';
+
+const INITIAL_STATE = [];
+
+const applyAddHeroes = (state, action) => action.heroes;
 
 function heroReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case HEROES_ADD: {
+      return applyAddHeroes(state, action);
+    }
     default:
       return state;
   }
