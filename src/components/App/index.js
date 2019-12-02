@@ -3,13 +3,21 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Heroes from '../Heroes';
 import SearchHeroes from '../SearchHeroes';
+import Navbar from '../Navbar';
+import Favorites from '../Favorites';
+import NotFavorites from '../NotFavorites';
 
 const App = () => (
-  <div>
+  <Router>
     <h1>Marvel Superheroes</h1>
+    <Navbar />
     <SearchHeroes />
-    <Heroes />
-  </div>
+    <Switch>
+      <Route exact path="/" component={Heroes} />
+      <Route path="/favorites" component={Favorites} />
+      <Route path="/not-favorites" component={NotFavorites} />
+    </Switch>
+  </Router>
 );
 
 export default App;
