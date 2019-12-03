@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { doFetchHeroes } from '../../actions/hero';
 
-import { Searchbar } from './styles';
+import Button from '../../styles/components/Button';
+import { Searchbar, Field } from './styles';
 
 class SearchHeroes extends Component {
   constructor(props) {
@@ -34,8 +35,14 @@ class SearchHeroes extends Component {
   render() {
     return (
       <Searchbar onSubmit={this.onSubmit}>
-        <input type="text" value={this.state.query} onChange={this.onChange} />
-        <button type="submit">Search</button>
+        <Field
+          type="search"
+          value={this.state.query}
+          onChange={this.onChange}
+        />
+        <Button type="submit" onClick={this.onSubmit}>
+          Search
+        </Button>
       </Searchbar>
     );
   }

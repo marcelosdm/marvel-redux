@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const sizes = {
   small: css`
@@ -23,6 +23,10 @@ const colors = {
     &:hover {
       border: 1px solid #777777;
     }
+
+    &:active {
+      background: #b9bbbe;
+    }
   `,
   danger: css`
     background: #e7432a;
@@ -45,7 +49,7 @@ const colors = {
   `
 };
 
-const Button = styled.button.attrs({ type: "button" })`
+const Button = styled.button.attrs({ type: 'button' })`
   border-radius: 3px;
   color: #fff;
   border: 0;
@@ -55,7 +59,7 @@ const Button = styled.button.attrs({ type: "button" })`
   text-transform: uppercase;
   transition: background-color 0.2s ease;
 
-  ${props => sizes[props.size || "default"]}
-  ${props => colors[props.color || "default"]}
+  ${props => sizes[props.size || 'default']}
+  ${props => colors[props.color || 'default']}
 `;
 export default Button;

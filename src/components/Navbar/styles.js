@@ -25,5 +25,5 @@ export const Li = styled.li`
 `;
 
 export const Logo = styled.img`
-  content: url('logo-marvel.svg');
+  content: url('marvel-logo.svg');
 `;
